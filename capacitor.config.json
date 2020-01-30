@@ -1,0 +1,8 @@
+{
+  "appId": "com.kirillmakeev.ru",
+  "appName": "Kirill Makeev",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist",
+  "cordova": {}
+}
