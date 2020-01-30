@@ -1,4 +1,4 @@
-# bloggapp
+# bloggapp-ionicapp
 
 ## Project setup
 ```
