@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
 import PostModal from '@/components/PostModal.vue'
 
@@ -30,6 +30,12 @@ export default {
     return {
       posts: []
     }
+  },
+  computed: {
+    ...mapState([
+      'authenticated',
+      'user'
+    ])
   },
   methods: {
     ...mapActions([
@@ -80,10 +86,14 @@ export default {
               description: post.description
             },
             propsData: {
-              title: post.header
+              id: post._id,
+              title: post.header,
+              comments: post.comments,
+              authenticated: this.authenticated,
+              user: this.user
             }
           }
-        })
+        });
         modal.present();
       } catch(err) {
         let toast = await this.$ionic.toastController.create({

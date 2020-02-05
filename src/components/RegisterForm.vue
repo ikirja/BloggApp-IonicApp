@@ -13,7 +13,8 @@
       <ion-input :value="registerBody.password" @input="registerBody.password = $event.target.value" type="password"></ion-input>
     </ion-item>
     <div class="buttons">
-      <ion-button @click="registerUser(registerBody)" expand="block">Зарегистрироваться</ion-button>
+      <ion-button @click="registerUser(registerBody)" expand="block" color="success">Зарегистрироваться</ion-button>
+      <ion-button @click="close" expand="block">Назад</ion-button>
     </div>
   </ion-content>
 </template>
@@ -38,6 +39,9 @@ export default {
     async registerUser(body) {
       this.$emit('show-form', 'hide-register-form')
       await this.register(body)
+    },
+    close() {
+      this.$emit('show-form', 'hide-register-form')
     }
   }
 }

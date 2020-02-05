@@ -28,7 +28,7 @@
           v-if="authenticated"
         />
         <LoginForm
-          v-if="!authenticated && !showRegisterForm"
+          v-if="!showRegisterForm && !showForgotForm && !authenticated"
           @show-form="showForm"
         />
         <RegisterForm
