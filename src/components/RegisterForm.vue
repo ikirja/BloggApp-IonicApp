@@ -12,6 +12,10 @@
       <ion-label position="floating">Пароль</ion-label>
       <ion-input :value="registerBody.password" @input="registerBody.password = $event.target.value" type="password"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input :value="registerBody.email" @input="registerBody.email = $event.target.value" type="email"></ion-input>
+    </ion-item>
     <div class="buttons">
       <ion-button @click="registerUser(registerBody)" expand="block" color="success">Зарегистрироваться</ion-button>
       <ion-button @click="close" expand="block">Назад</ion-button>
@@ -28,7 +32,8 @@ export default {
       registerBody: {
         name: '',
         username: '',
-        password: ''
+        password: '',
+        email: ''
       }
     }
   },

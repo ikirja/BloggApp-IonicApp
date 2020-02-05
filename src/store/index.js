@@ -144,16 +144,8 @@ export default new Vuex.Store({
         if(response.status === 200){
           localStorage.setItem('token', response.data)
           context.dispatch('getUser')
-          let toast = await this.$ionic.toastController.create({
-            message: 'Вы успешно зарегистрировались',
-            position: 'top',
-            showCloseButton: true,
-            duration: 2000
-          })
-          await toast.present()
-        } else {
           let toast = await this._vm.$ionic.toastController.create({
-            message: 'Произошла ошибка, попробуйте чуть позже',
+            message: 'Вы успешно зарегистрировались',
             position: 'top',
             showCloseButton: true,
             duration: 2000
@@ -161,6 +153,7 @@ export default new Vuex.Store({
           await toast.present()
         }
       } catch(err) {
+        console.log(err);
         let toast = await this._vm.$ionic.toastController.create({
           message: 'Произошла ошибка, попробуйте чуть позже',
           position: 'top',
