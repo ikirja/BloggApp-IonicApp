@@ -153,7 +153,6 @@ export default new Vuex.Store({
           await toast.present()
         }
       } catch(err) {
-        console.log(err);
         let toast = await this._vm.$ionic.toastController.create({
           message: 'Произошла ошибка, попробуйте чуть позже',
           position: 'top',
