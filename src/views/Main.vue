@@ -46,7 +46,6 @@
         <ion-tab-button tab="blog" @click="scrollToTop">
           <ion-icon name="list-box"></ion-icon>
           <ion-label>Блог</ion-label>
-          <ion-badge>6</ion-badge>
         </ion-tab-button>
         <ion-tab-button tab="contacts">
           <ion-icon name="call"></ion-icon>
